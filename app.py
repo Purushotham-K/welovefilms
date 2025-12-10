@@ -325,6 +325,51 @@ h2, h3, h4 {
         height: auto !important;
     }
 
+    /* Reduce navbar spacing */
+    .we-header-nav a {
+        margin-right: 12px !important;
+        font-size: 16px !important;
+    }
+
+    /* --------------------------- */
+    /* NEW: Hide menu on mobile    */
+    /* --------------------------- */
+    .we-header-nav {
+        display: none !important;
+        flex-direction: column;
+        background: #ffffff;
+        width: 100%;
+        padding: 1rem 0;
+        border-top: 1px solid #eee;
+        text-align: center;
+    }
+
+    /* Show menu when hamburger is clicked */
+    #menu-toggle:checked ~ .we-header-nav {
+        display: flex !important;
+    }
+
+    /* Make menu items large and clean */
+    .we-header-nav a {
+        margin: 10px 0 !important;
+        font-size: 1.2rem !important;
+        display: block;
+    }
+
+    /* Show hamburger icon */
+    .menu-icon {
+        display: block !important;
+    }
+
+    /* Fix page padding */
+    .block-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 1rem !important;
+    }
+}
+
+
     /* REMOVE STREAMLIT DEFAULT UI BUTTONS */
 #MainMenu {visibility: hidden;}       /* Removes hamburger menu */
 footer {visibility: hidden;}          /* Removes footer */
@@ -369,6 +414,18 @@ header {visibility: hidden;}          /* Removes Streamlit top header */
         bottom: 20px !important;
     }
 }
+
+/* Hide Streamlit deploy button & GitHub button */
+[data-testid="stActionButton"] {
+    display: none !important;
+}
+
+/* Hide floating bottom-right badges */
+.stAppDeployButton,
+.stAppViewerBadges {
+    display: none !important;
+}
+
 
 
 </style>
