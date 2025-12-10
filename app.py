@@ -402,30 +402,34 @@ def top_nav():
     st.markdown(
         """
 <div class="we-header">
-    <div class="we-header-inner">
-        <div class="we-header-brand">
-            <div class="we-logo-box">WLF</div>
-            <div class="we-logo-text">WE LOVE FILMS</div>
-        </div>
+  <div class="we-header-inner">
 
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">
-            <span></span><span></span><span></span>
-        </label>
-
-        <nav class="we-header-nav">
-            <a href="#home">Home</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#films">Films</a>
-            <a href="#about">About Us</a>
-            <a href="#book">Book Us</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <div class="we-header-brand">
+      <div class="we-logo-box">WLF</div>
+      <div class="we-logo-text">WE LOVE FILMS</div>
     </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+    <label for="menu-toggle" class="menu-icon">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="we-header-nav">
+      <a href="#home">Home</a>
+      a href="#gallery">Gallery</a>
+      <a href="#films">Films</a>
+      <a href="#about">About Us</a>
+      <a href="#book">Book Us</a>
+    <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
 </div>
 """,
         unsafe_allow_html=True
-)
+    )
+
 
 
 def section_home():
@@ -437,16 +441,19 @@ def section_home():
         st.image(Image.open(hero_img), use_container_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown(
-        """
-    <div class="hero-caption">
-        Your wedding is one of the most meaningful chapters of your life.Our team at We Love Films is dedicated to capturing it with precision, beauty, and emotion so you can relive every moment exactly as it was.
-        From intimate ceremonies to grand celebrations, we create photographs and films that are timeless, heartfelt, and uniquely yours.
-        Book your wedding story with us today.
-    </div>
-    """,
-        unsafe_allow_html=True,
+st.markdown(
+    """
+<div class="hero-caption">
+    Your wedding is one of the most meaningful chapters of your life.
+    From intimate ceremonies to grand celebrations,
+    our team at We Love Films is dedicated to capturing it with
+    precision, beauty, and emotion, so you can relive every moment exactly as it happened.
+    Book your wedding story with us today.
+</div>
+""",
+    unsafe_allow_html=True
 )
+
 
 
 def section_gallery():
