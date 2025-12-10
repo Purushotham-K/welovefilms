@@ -231,6 +231,47 @@ h2, h3, h4 {
     cursor: pointer !important;
 }
 
+/* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+
+    /* Make hero image fit mobile screen properly */
+    .st-emotion-cache-1y4p8pa, .stImage {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Reduce navbar spacing */
+    .we-header-nav a {
+        margin-right: 12px !important;
+        font-size: 16px !important;
+    }
+
+    /* Center navbar for mobile */
+    .we-header-nav {
+        text-align: center !important;
+        display: block !important;
+    }
+
+    /* Reduce page padding */
+    .block-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 1rem !important;
+    }
+
+    /* Make gallery images scale properly */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Fix hero text overlay positioning */
+    .hero-text {
+        font-size: 1.2rem !important;
+        bottom: 20px !important;
+    }
+}
+
 
 </style>
 """
