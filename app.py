@@ -407,7 +407,7 @@ def top_nav():
             <div class="we-logo-text">WE LOVE FILMS</div>
         </div>
 
-        <input type="checkbox" id="menu-toggle">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="menu-icon">
             <span></span><span></span><span></span>
         </label>
@@ -422,7 +422,7 @@ def top_nav():
         </nav>
     </div>
 </div>
-    """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True,)
 
 
 def section_home():
