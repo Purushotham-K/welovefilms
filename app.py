@@ -143,6 +143,15 @@ html, body, .stApp, [data-testid="stAppViewContainer"],
         display: block;
     }
 
+    .menu-icon span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #000;
+    margin: 4px 0;
+}
+
+
     /* show menu when checkbox is checked */
     #menu-toggle:checked ~ .we-header-nav {
         display: flex;
@@ -417,17 +426,17 @@ def top_nav():
 
     <nav class="we-header-nav">
       <a href="#home">Home</a>
-      a href="#gallery">Gallery</a>
+      <a href="#gallery">Gallery</a>
       <a href="#films">Films</a>
       <a href="#about">About Us</a>
       <a href="#book">Book Us</a>
-    <a href="#contact">Contact</a>
+      <a href="#contact">Contact</a>
     </nav>
 
   </div>
 </div>
 """,
-        unsafe_allow_html=True
+        unsafe_allow_html=True,
     )
 
 
@@ -438,11 +447,13 @@ def section_home():
     hero_img = get_hero_image()
     if hero_img:
         st.markdown('<div class="hero-image-frame">', unsafe_allow_html=True)
+        # New API – width='stretch' instead of use_container_width
         st.image(Image.open(hero_img), width="stretch")
         st.markdown('</div>', unsafe_allow_html=True)
 
-st.markdown(
-    """
+    # Hero caption text under the image
+    st.markdown(
+        """
 <div class="hero-caption">
     Your wedding is one of the most meaningful chapters of your life.
     From intimate ceremonies to grand celebrations,
@@ -451,8 +462,9 @@ st.markdown(
     Book your wedding story with us today.
 </div>
 """,
-    unsafe_allow_html=True
-)
+        unsafe_allow_html=True,
+    )
+
 
 
 
@@ -477,7 +489,7 @@ def section_gallery():
                 col = cols[i % 3]
                 with col:
                     st.markdown('<div class="gallery-img-wrap">', unsafe_allow_html=True)
-                    st.image(Image.open(img_path), use_container_width="stretch")
+                    st.image(Image.open(img_path), width="stretch")
                     st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
