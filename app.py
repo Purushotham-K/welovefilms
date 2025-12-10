@@ -399,7 +399,8 @@ def get_hero_image():
 # =========================
 
 def top_nav():
-    st.markdown("""
+    st.markdown(
+        """
 <div class="we-header">
     <div class="we-header-inner">
         <div class="we-header-brand">
@@ -422,7 +423,9 @@ def top_nav():
         </nav>
     </div>
 </div>
-    """, unsafe_allow_html=True)
+""",
+        unsafe_allow_html=True
+)
 
 
 def section_home():
