@@ -33,6 +33,7 @@ CSS = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display...wght@400;700;800&display=swap');
 
+
 /* FULL PAGE WHITE BACKGROUND */
 html, body, .stApp, [data-testid="stAppViewContainer"], 
 [data-testid="stSidebar"], .block-container {
@@ -40,23 +41,112 @@ html, body, .stApp, [data-testid="stAppViewContainer"],
     color: #000000 !important;
 }
 
-/* Top Navigation Bar */
+/* ===================== */
+/* Custom header + nav   */
+/* ===================== */
+
 .we-header {
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
-    z-index: 900;
-    background-color: #ffffff !important;
-    padding: 1.2rem 2rem;
-    border-bottom: 1px solid rgba(0,0,0,0.10);
+    z-index: 999;
+}
+
+.we-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.2rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-family: "Playfair Display", serif;
 }
 
-.we-header-left {
+.we-header-brand {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+}
+
+.we-logo-box {
+    border: 2px solid #000;
+    padding: 6px 10px;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.we-logo-text {
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    line-height: 1.1;
+}
+
+.we-header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.we-header-nav a {
+    margin-left: 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    text-decoration: none;
+    color: #000000;
+}
+
+.we-header-nav a:hover {
+    opacity: 0.7;
+}
+
+/* Hamburger toggle (hidden on desktop) */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    margin-left: 16px;
+}
+
+/* ===================== */
+/* Mobile header styles  */
+/* ===================== */
+
+@media (max-width: 768px) {
+    .we-header-inner {
+        padding: 0.8rem 1rem;
+    }
+
+    .we-header-nav {
+        position: absolute;
+        top: 64px;          /* just below header */
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        border-top: 1px solid #eee;
+        display: none;
+        flex-direction: column;
+        padding: 0.75rem 1.25rem 1rem;
+    }
+
+    .we-header-nav a {
+        margin: 0.45rem 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    /* show menu when checkbox is checked */
+    #menu-toggle:checked ~ .we-header-nav {
+        display: flex;
+    }
 }
 
 .we-logo-box {
@@ -81,21 +171,7 @@ html, body, .stApp, [data-testid="stAppViewContainer"],
     color: #000000;
 }
 
-/* NAV LINKS */
-.we-header-nav a {
-    margin: 0 1rem;
-    text-decoration: none;
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #000000 !important;
-}
 
-.we-header-nav a:hover {
-    color: #444444 !important;
-}
 
 /* Hero Image Style */
 .hero-image-frame {
@@ -324,20 +400,28 @@ def get_hero_image():
 
 def top_nav():
     st.markdown("""
-    <div class="we-header">
-        <div class="we-header-left">
+<div class="we-header">
+    <div class="we-header-inner">
+        <div class="we-header-brand">
             <div class="we-logo-box">WLF</div>
             <div class="we-logo-text">WE LOVE FILMS</div>
         </div>
-        <div class="we-header-nav">
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span></span><span></span><span></span>
+        </label>
+
+        <nav class="we-header-nav">
             <a href="#home">Home</a>
             <a href="#gallery">Gallery</a>
             <a href="#films">Films</a>
             <a href="#about">About Us</a>
             <a href="#book">Book Us</a>
             <a href="#contact">Contact</a>
-        </div>
+        </nav>
     </div>
+</div>
     """, unsafe_allow_html=True)
 
 
