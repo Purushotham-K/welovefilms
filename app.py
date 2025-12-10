@@ -478,32 +478,37 @@ def get_hero_image():
 # =========================
 
 def top_nav():
-    html = """<div class="we-header">
-<div class="we-header-inner">
+    st.markdown(
+        """
+<div class="we-header">
+  <div class="we-header-inner">
 
-<div class="we-header-brand">
-  <div class="we-logo-box">WLF</div>
-  <div class="we-logo-text">WE LOVE FILMS</div>
+    <div class="we-header-brand">
+      <div class="we-logo-box">WLF</div>
+      <div class="we-logo-text">WE LOVE FILMS</div>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+    <label for="menu-toggle" class="menu-icon">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="we-header-nav">
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#films">Films</a>
+      <a href="#about">About Us</a>
+      <a href="#book">Book Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
 </div>
+""",
+        unsafe_allow_html=True,
+    )
 
-<input type="checkbox" id="menu-toggle" class="menu-toggle" />
-
-<label for="menu-toggle" class="menu-icon">
-  <span></span><span></span><span></span>
-</label>
-
-<nav class="we-header-nav">
-  <a href="#home">Home</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#films">Films</a>
-  <a href="#about">About Us</a>
-  <a href="#book">Book Us</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-</div>
-</div>"""
-    st.markdown(html, unsafe_allow_html=True)
 
 
 
