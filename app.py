@@ -517,7 +517,7 @@ def section_home():
     if hero_img:
         st.markdown('<div class="hero-image-frame">', unsafe_allow_html=True)
         # New API – width='stretch' instead of use_container_width
-        st.image(Image.open(hero_img), width="stretch")
+        st.image(Image.open(hero_img), use_container_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
     # Hero caption text under the image
@@ -558,7 +558,7 @@ def section_gallery():
                 col = cols[i % 3]
                 with col:
                     st.markdown('<div class="gallery-img-wrap">', unsafe_allow_html=True)
-                    st.image(Image.open(img_path), width="stretch")
+                    st.image(Image.open(img_path), use_container_width=True)
                     st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
