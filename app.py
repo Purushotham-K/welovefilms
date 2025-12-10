@@ -422,7 +422,7 @@ def top_nav():
         </nav>
     </div>
 </div>
-    """, unsafe_allow_html=True,)
+    """, unsafe_allow_html=True)
 
 
 def section_home():
@@ -436,14 +436,14 @@ def section_home():
 
     st.markdown(
         """
-        <div class="hero-caption">
-            Your wedding is one of the most meaningful chapters of your life.Our team at We Love Films is dedicated to capturing it with precision, beauty, and emotion so you can relive every moment exactly as it was.
-            From intimate ceremonies to grand celebrations, we create photographs and films that are timeless, heartfelt, and uniquely yours.
-            Book your wedding story with us today.
-        </div>
-        """,
+    <div class="hero-caption">
+        Your wedding is one of the most meaningful chapters of your life.Our team at We Love Films is dedicated to capturing it with precision, beauty, and emotion so you can relive every moment exactly as it was.
+        From intimate ceremonies to grand celebrations, we create photographs and films that are timeless, heartfelt, and uniquely yours.
+        Book your wedding story with us today.
+    </div>
+    """,
         unsafe_allow_html=True,
-    )
+)
 
 
 def section_gallery():
