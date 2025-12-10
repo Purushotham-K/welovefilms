@@ -438,7 +438,7 @@ def section_home():
     hero_img = get_hero_image()
     if hero_img:
         st.markdown('<div class="hero-image-frame">', unsafe_allow_html=True)
-        st.image(Image.open(hero_img), use_container_width=True)
+        st.image(Image.open(hero_img), width="stretch")
         st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown(
@@ -477,7 +477,7 @@ def section_gallery():
                 col = cols[i % 3]
                 with col:
                     st.markdown('<div class="gallery-img-wrap">', unsafe_allow_html=True)
-                    st.image(Image.open(img_path), use_container_width=True)
+                    st.image(Image.open(img_path), use_container_width="stretch")
                     st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
