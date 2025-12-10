@@ -325,6 +325,19 @@ h2, h3, h4 {
         height: auto !important;
     }
 
+    /* REMOVE STREAMLIT DEFAULT UI BUTTONS */
+#MainMenu {visibility: hidden;}       /* Removes hamburger menu */
+footer {visibility: hidden;}          /* Removes footer */
+header {visibility: hidden;}          /* Removes Streamlit top header */
+.stAppDeployButton {display: none;}   /* Removes Fork/Deploy buttons */
+.stToolbar {display: none !important;} /* Removes editing toolbar */
+.stActionButton {display: none !important;} /* Removes floating bottom-right button */
+
+
+
+
+
+
     /* Reduce navbar spacing */
     .we-header-nav a {
         margin-right: 12px !important;
